@@ -1,19 +1,26 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import Login from './pages/login';
 import renderWithRouter from './renderWithRouter';
 
-describe('Verifica se Renderiza a página de Login', () => {
-    render(<Login/>);
+it('Verifica se Renderiza a página de Login', () => {
+  renderWithRouter(<Login/>);
   const mainTitle = screen.getByText(/Welcome to CodeLeap network!/i);
   const button = screen.getByRole('button');
   expect(mainTitle).toBeInTheDocument();
   expect(button).toBeInTheDocument();
-  it("Verifica se o botão redireciona para a pagina Home", ()=> {
-    const { history } = renderWithRouter(<Login />);
 
-    history.push('/home')
-
-    expect(screen.getByText(/test/i)).toBeInTheDocument();
-
-  })
 });
+
+it("Verifica se o Botão redireciona para outra página",async ()=> {
+  const {history} = renderWithRouter(<Login/>);
+
+  const usernameInput = screen.getByTestId('username');
+  const button = screen.getByTestId('button-submit');
+
+  fireEvent.change(usernameInput, {target: {value: 'Walmir'}});
+  expect(button.disabled).toBe(false);
+  fireEvent.click(button)
+  
+  const {pathname} = history.location;
+  expect(pathname).toBe('/home');
+})

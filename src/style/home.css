@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    background-color: rgb(214, 214, 214);
+    display: flex;
+    justify-content: center;
+}
+
+.main-home{
+    width: 800px;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-home header {
+    background-color: black;
+    color: white;
+    padding: 1.25rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: medium;
+}
+
+.main-home form h3 {
+    margin-left: 1.5rem;
+    padding: 1rem 0;
+    font-weight: bold;
+}
+
+.main-home form {
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(160, 160, 160);
+    width: 90%;
+    margin-top: 2rem;
+}
+
+.input-title {
+    margin-top: 1rem;
+}
+
+.input-title label span {
+    margin-left: 1.5rem;
+    font-weight: 500;
+}
+.input-title input {
+     width: 90%;
+    margin-top: 0.75rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    border: 1px solid rgb(138, 138, 138);
+    border-radius: 3px;
+    padding: 0.25rem;
+    box-sizing: border-box;
+}
+
+.input-content {
+    margin-top: 1rem;
+}
+
+.input-content label span {
+    margin-left: 1.5rem;
+    font-weight: 500;
+}
+.input-content textarea {
+     width: 90%;
+    margin-top: 0.75rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;    
+    border: 1px solid rgb(138, 138, 138);
+    border-radius: 3px;
+    padding: 0.25rem;
+    box-sizing: border-box;
+}
+
+.button-create {
+    background-color: black;
+    color: white;
+    border: none;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    width: 100px;
+    margin-left: 36rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.button-create-grey {
+    background-color: rgb(153, 153, 153);
+    color: white;
+    border: none;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    width: 100px;
+    margin-left: 36rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
