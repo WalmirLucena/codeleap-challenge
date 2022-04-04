@@ -11,7 +11,7 @@ html{
 
 .main-home{
     width: 800px;
-    height: 100vh;
+    min-height: 100vw;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -101,4 +101,47 @@ html{
     margin-left: 36rem;
     font-weight: bold;
     margin-bottom: 2rem;
+}
+
+.post-section {
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(160, 160, 160);
+    width: 90%;
+    margin-top: 2rem;
+}
+
+.post-header {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: medium;
+}
+
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+.info-section .name {
+    margin-left: 0;
+}
+
+.info-section h4 {
+    color: grey;
+}
+
+.post-section .content{
+    margin: 1rem;
+    width: 90%;
+
+}
+.content p {
+    width: 100%;
+    box-sizing: border-box;
+    white-space: pre-line;
+    word-wrap: break-word;
 }

@@ -1,24 +1,30 @@
-export const ADD = 'ADD';
-export const DELETE = "DELETE";
-export const EDIT = "EDIT"
+export const ADD_POST = 'ADD';
+export const DELETE_POST = 'DELETE';
+export const EDIT_POST = 'EDIT';
+export const GET_USER = 'GET_USER'
+
+export const getUser = (payload) => ({
+    type: GET_USER,
+    payload,
+  });
 
 export const newPost = (payload) => (
       {
-        type: ADD,
+        type: ADD_POST,
         payload,
       }
     )
 
 export const deletePost = (payload) => (
         {
-          type: DELETE,
+          type: DELETE_POST,
           payload,
         }
       )
 
 export const editPost = (payload) => (
         {
-          type: EDIT,
+          type: EDIT_POST,
           payload,
         }
       )

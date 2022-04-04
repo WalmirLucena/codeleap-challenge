@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { getUser } from '../actions';
 import '../style/login.css';
 
-function Login (){
+function Login (props){
    const [disabled, setDisabled] = useState(true);
    const [username, setUsername] = useState();
+
    const navigate = useNavigate();
+   const dispatch = useDispatch();
 
    const handleInput = (event) => {
     setUsername(event.target.value)
@@ -19,9 +23,11 @@ function Login (){
        }
    },[username])
 
+
    const handleSubmit = (event) => {
         event.preventDefault();
-        
+      
+        dispatch(getUser(username))      
       navigate("/home", {state: username});
    }
     return(
@@ -46,4 +52,5 @@ function Login (){
         </main>
     )
 }
-export default Login;
+  
+  export default Login;
