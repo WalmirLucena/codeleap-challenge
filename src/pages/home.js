@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { newPost } from '../actions';
 import forms from '../components/forms';
 import '../style/home.css';
+import editImage from "../images/edit-regular.svg";
+import deleteImage from "../images/trash-alt-regular.svg"
 
 function Home () {
    const [disabled, setDisabled] = useState(true);
@@ -46,6 +48,10 @@ function Home () {
                 <section className="post-section">
                     <div className="post-header">
                         <h3>{item.title}</h3>
+                        <div>
+                            <img className='image' src={deleteImage} alt="icon to delete post"/>
+                            <img className='image' src={editImage} alt="icon to edit post"/>
+                        </div>
                     </div>
                     <div className='post-container'>
                         <div className="info-section">

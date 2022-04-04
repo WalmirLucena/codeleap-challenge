@@ -118,6 +118,8 @@ html{
     width: 100%;
     box-sizing: border-box;
     font-size: medium;
+    display: flex;
+    justify-content: space-between;
 }
 
 .info-section {
@@ -145,3 +147,10 @@ html{
     white-space: pre-line;
     word-wrap: break-word;
 }
+
+.image {
+    height: 20px;
+    color: white;
+    margin: 0.25rem;
+    padding-left: 0.5rem;
+} 
