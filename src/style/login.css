@@ -13,10 +13,9 @@ html{
 }
 
 .main-content{
-    overflow: hidden;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     width: 500px;
-    height: 200px;
+    height: 220px;
 }
 
 .main-content h1 {

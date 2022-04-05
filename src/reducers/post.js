@@ -9,11 +9,11 @@ const INITIAL_STATE = {
     case ADD_POST:
       return {...state, post: [...state.post, {...action.payload, id: state.post.length}]};
     case DELETE_POST:
-      return {...state, post: state.post.filter((item)=> item.name !== action.payload)}
+      return {...state, post: state.post.filter((item)=> item.name !== action.payload.name)}
     case EDIT_POST:
       return {...state, post: state.post.map((item) => {
         if(item.name === action.payload.name){
-          return [...item, ...action.payload]
+          return {...item, ...action.payload};
         }
         return item;
       })}
