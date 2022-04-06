@@ -126,9 +126,17 @@ html{
     padding: 1rem;
     width: 100%;
     box-sizing: border-box;
-    font-size: medium;
     display: flex;
     justify-content: space-between;
+}
+
+.post-header h3 {
+    font-weight: 400;
+    font-size: x-large;
+}
+
+.post-buttons {
+    display: flex;
 }
 
 .info-section {
@@ -143,6 +151,8 @@ html{
 
 .info-section h4 {
     color: grey;
+    font-weight: 500;
+    font-size: large;
 }
 
 .post-section .content{

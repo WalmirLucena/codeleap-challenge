@@ -10,8 +10,7 @@ export default function EditConfirmation({handleClose, show, item}) {
     const [disabled, setDisabled] = useState(true);
     const [title, setTitle] = useState();
     const [content, setContent] = useState();
-    console.log(item);
-
+  
     const handleTitle = (event) => {
         setTitle(event.target.value);
         

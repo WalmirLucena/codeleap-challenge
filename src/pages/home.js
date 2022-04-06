@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { newPost } from '../actions';
-import forms from '../components/formEdited';
+import Forms from '../components/formEdited';
 import '../style/home.css';
 import editImage from "../images/edit-regular.svg";
 import deleteImage from "../images/trash-alt-regular.svg"
 import DeleteConfirmation from '../components/deleteConfirmation';
 import EditConfirmation from '../components/editConfirmation';
+import moment from 'moment';
 
 function Home () {
    const [disabled, setDisabled] = useState(true);
@@ -39,7 +40,7 @@ function Home () {
     
     const handleSubmit = (event) => {
         event.preventDefault();
-        const post = {name, title, content, date: (new Date()).toLocaleString()}
+        const post = {name, title, content, date: (new Date())}
         dispatch(newPost(post));
     }
 
@@ -55,13 +56,22 @@ function Home () {
         setShow(true);        
     }
 
+    const showDate = (date) => {
+      const atual =  moment(new Date());
+      const difference = atual.from(date);
+      console.log(difference);
+        return  <h4 className='date'>{difference} ago</h4>
+    }
+
+  
+
     const renderPosts = () => {
         if(storePost.post) return (
             storePost.post.map((item) => (
                 <section className="post-section">
                     <div className="post-header">
                         <h3>{item.title}</h3>
-                        <div>
+                        <div className="post-buttons">
                             <div onClick={() => handleShow(item)}>
                                 <img className='image' src={deleteImage}  alt="icon to delete post"/>
                             </div>
@@ -73,7 +83,9 @@ function Home () {
                     <div className='post-container'>
                         <div className="info-section">
                             <h4 className='name'>@{item.name}</h4>
-                            <h4 className='date'>{item.date}</h4>
+                            { showDate(item.date)}
+
+                            {/* <h4 className='date'>{item.date.toLocaleString()}</h4> */}
 
                         </div>
                         <div className='content'>
@@ -82,7 +94,7 @@ function Home () {
                     </div>
                 </section>
                
-        )))
+        ))) 
 }
 
 
@@ -91,13 +103,13 @@ function Home () {
             <header>
                 <h1>CodeLeap Network</h1>
             </header>
-            {forms({
-                handleSubmit, 
-                title ,
-                content, 
-                disabled ,
-                handleTitle ,
-                handleContent})}
+            <Forms 
+            handleSubmit={handleSubmit} 
+            title={title} 
+            content={content} 
+            disabled={disabled} 
+            handleTitle={handleTitle} 
+            handleContent={handleContent}/>
             {renderPosts()}
             <DeleteConfirmation handleClose={handleClose} show={show} item={remove} />
             <EditConfirmation handleClose={handleClose} show={show} item={edit} />
