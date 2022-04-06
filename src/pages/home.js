@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React,{ useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { newPost } from '../actions';
 import Forms from '../components/formEdited';
@@ -10,12 +10,13 @@ import EditConfirmation from '../components/editConfirmation';
 import moment from 'moment';
 
 function Home () {
-   const [disabled, setDisabled] = useState(true);
+    const [disabled, setDisabled] = useState(true);
     const [title, setTitle] = useState();
     const [content, setContent] = useState();
     const [remove, setRemove] = useState();
     const [show, setShow] = useState(false);
-    const [edit, setEdit] = useState(false)
+    const [edit, setEdit] = useState(false);
+    const [showRemove, setShowRemove] = useState(false);
 
     const name = useSelector(state => state.user);
     const storePost = useSelector(state => state.post)
@@ -44,11 +45,14 @@ function Home () {
         dispatch(newPost(post));
     }
 
-    const handleClose = () => setShow(false);
+    const handleClose = () => { 
+      setShow(false);
+      setShowRemove(false);
+    }
 
     const handleShow = (item) => {
         setRemove(item)
-        setShow(true);        
+        setShowRemove(true);        
     }
 
     const handleShowEdit = (item) => {
@@ -59,16 +63,13 @@ function Home () {
     const showDate = (date) => {
       const atual =  moment(new Date());
       const difference = atual.from(date);
-      console.log(difference);
         return  <h4 className='date'>{difference} ago</h4>
     }
-
-  
 
     const renderPosts = () => {
         if(storePost.post) return (
             storePost.post.map((item) => (
-                <section className="post-section">
+                <section key={item} className="post-section">
                     <div className="post-header">
                         <h3>{item.title}</h3>
                         <div className="post-buttons">
@@ -84,9 +85,6 @@ function Home () {
                         <div className="info-section">
                             <h4 className='name'>@{item.name}</h4>
                             { showDate(item.date)}
-
-                            {/* <h4 className='date'>{item.date.toLocaleString()}</h4> */}
-
                         </div>
                         <div className='content'>
                             <p>{item.content}</p>
@@ -111,7 +109,7 @@ function Home () {
             handleTitle={handleTitle} 
             handleContent={handleContent}/>
             {renderPosts()}
-            <DeleteConfirmation handleClose={handleClose} show={show} item={remove} />
+            <DeleteConfirmation handleClose={handleClose} show={showRemove} item={remove} />
             <EditConfirmation handleClose={handleClose} show={show} item={edit} />
 
         </main>

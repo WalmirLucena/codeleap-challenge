@@ -10,12 +10,13 @@ html{
 }
 
 .main-home{
-    width: 800px;
+    width: 900px;
     min-height: 100vw;
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 .main-home header {
@@ -57,7 +58,7 @@ html{
     font-weight: 500;
 }
 .input-title input {
-    width: 90%;
+    width: 93%;
     margin: 0.75rem 0 0 1.5rem;
     border: 1px solid rgb(138, 138, 138);
     border-radius: 3px;
@@ -78,14 +79,21 @@ html{
     font-weight: 500;
 }
 .input-content textarea {
-     width: 90%;
+    width: 93%;
     margin-top: 0.75rem;
     margin-left: 1.5rem;
-    margin-right: 1.5rem;    
     border: 1px solid rgb(138, 138, 138);
     border-radius: 3px;
     padding: 0.25rem;
     box-sizing: border-box;
+}
+
+.button-create-container {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    align-items: flex-end
 }
 
 .button-create {
@@ -95,9 +103,10 @@ html{
     margin-top: 1rem;
     padding: 0.5rem;
     width: 100px;
-    margin-left: 36rem;
     font-weight: bold;
     margin-bottom: 2rem;
+    margin-right: 1.5rem;
+
 }
 
 .button-create-grey {
@@ -107,9 +116,10 @@ html{
     margin-top: 1rem;
     padding: 0.5rem;
     width: 100px;
-    margin-left: 36rem;
     font-weight: bold;
     margin-bottom: 2rem;
+    margin-right: 1.5rem;
+
 }
 
 .post-section {
@@ -158,6 +168,7 @@ html{
 .post-section .content{
     margin: 1rem;
     width: 90%;
+    margin-bottom: 2rem;
 
 }
 .content p {
@@ -194,6 +205,13 @@ html{
     width: 60%;
 }
 
+.save-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: end;
+    align-items: flex-end;
+}
+
 .button-save {
     background-color: black;
     color: white;
@@ -203,7 +221,7 @@ html{
     width: 100px;
     font-weight: bold;
     margin-bottom: 2rem;
-    margin-left: 650px;
+    margin-right: 2rem;
     box-sizing: border-box; 
 }
 
@@ -216,6 +234,85 @@ html{
     padding: 0.5rem;
     width: 100px;
     font-weight: bold;
-    margin-bottom: 2rem;
-    margin-left: 650px;    
+    margin-bottom: 2rem;    
+    margin-right: 2rem;
+ 
+}
+
+@media only screen and (max-width: 1200px) {
+    .main-home {
+        width: 700px;
+        min-height: 100vw;
+
+    }
+
+    .main-home form {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input-title {
+        width: 100%;
+    }
+
+    .input-content {
+        width: 100%;
+    }
+
+    .button-create-container {
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+     .button-create {
+        align-items: center;       
+    }
+
+    .button-create-grey {
+        align-items: center;
+    }
+    
+}
+
+@media only screen and (max-width: 768px) {
+    .main-home {
+        width: 500px;
+        min-height: 100vw;
+
+    }
+    .input-content label textarea {
+        margin-left: 1rem;
+        padding: 0.75rem;
+    }
+
+    .input-content label span {
+        margin-left: 1rem;
+        font-weight: 700;
+    }
+
+    .input-title label span {
+        margin-left: 1rem;
+        font-weight: 700;
+    }
+
+    .input-title label input {
+        margin-left: 1rem;
+        padding: 0.75rem;
+
+    }
+
+}
+
+
+@media only screen and (max-width: 420px) {
+    .main-home {
+        width: 345px;
+        min-height: 100vw;
+
+    }
 }

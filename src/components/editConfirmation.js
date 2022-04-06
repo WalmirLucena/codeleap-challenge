@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Modal} from 'react-bootstrap';
@@ -41,7 +42,7 @@ export default function EditConfirmation({handleClose, show, item}) {
         <Modal.Header closeButton>
           <Modal.Title>Edit item</Modal.Title>
         </Modal.Header>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="edit-form">
                 <div className="input-title">
                     <label htlmfor="title">
                         <span>Title</span>
@@ -54,11 +55,13 @@ export default function EditConfirmation({handleClose, show, item}) {
                         <textarea data-testid="content" name="content" value={content} placeholder="Content Here" onChange={handleContent} />
                     </label>
                 </div>
+                <div className="save-container">
                 <input type="submit"
                 value="SAVE"
                 data-testid="button-create" 
                 disabled={disabled}
                 className={disabled? "button-save-grey" : "button-save" }/>
+                </div>
             </form>
       </Modal>
     </>

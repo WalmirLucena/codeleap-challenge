@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getUser } from '../actions';
 import '../style/login.css';
 
-function Login (props){
+function Login (){
    const [disabled, setDisabled] = useState(true);
    const [username, setUsername] = useState();
 
@@ -38,7 +38,7 @@ function Login (props){
                 <div className="input-text">
                     <label htlmfor="name">
                         <span>Please enter your username</span>
-                        <input type="text" data-testid="username" name="name" value={username} placeholder="John Doe" onChange={handleInput} />
+                        <input type="text" name="name" value={username} placeholder="John Doe" onChange={handleInput} />
                     </label>
                 </div>
                 
