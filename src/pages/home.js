@@ -2,19 +2,18 @@ import React,{ useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { newPost } from '../actions';
 import Forms from '../components/formEdited';
-import '../style/home.css';
-import editImage from "../images/edit-regular.svg";
-import deleteImage from "../images/trash-alt-regular.svg"
 import DeleteConfirmation from '../components/deleteConfirmation';
 import EditConfirmation from '../components/editConfirmation';
-import moment from 'moment';
+import RenderPosts from '../components/renderPosts';
+import '../style/home.css';
+
 
 function Home () {
     const [disabled, setDisabled] = useState(true);
     const [title, setTitle] = useState();
     const [content, setContent] = useState();
     const [remove, setRemove] = useState();
-    const [show, setShow] = useState(false);
+    const [showEdit, setShowEdit] = useState(false);
     const [edit, setEdit] = useState(false);
     const [showRemove, setShowRemove] = useState(false);
 
@@ -26,11 +25,11 @@ function Home () {
         setTitle(event.target.value);
         
        };
-       const handleContent = (event) => {
+    const handleContent = (event) => {
         setContent(event.target.value);
        }
     
-       useEffect(()=> {
+    useEffect(()=> {
         if(!title || !content){
             setDisabled(true)
            } else {
@@ -46,55 +45,24 @@ function Home () {
     }
 
     const handleClose = () => { 
-      setShow(false);
+      setShowEdit(false);
       setShowRemove(false);
     }
 
-    const handleShow = (item) => {
-        setRemove(item)
-        setShowRemove(true);        
+    const handleShowDelete = (item) => {
+        if(item.name === name){
+            setRemove(item)
+            setShowRemove(true);
+        }        
     }
 
     const handleShowEdit = (item) => {
-        setEdit(item)
-        setShow(true);        
+        if(item.name === name){
+            setEdit(item)
+            setShowEdit(true);  
+        }
+              
     }
-
-    const showDate = (date) => {
-      const atual =  moment(new Date());
-      const difference = atual.from(date);
-        return  <h4 className='date'>{difference} ago</h4>
-    }
-
-    const renderPosts = () => {
-        if(storePost.post) return (
-            storePost.post.map((item) => (
-                <section key={item} className="post-section">
-                    <div className="post-header">
-                        <h3>{item.title}</h3>
-                        <div className="post-buttons">
-                            <div onClick={() => handleShow(item)}>
-                                <img className='image' src={deleteImage}  alt="icon to delete post"/>
-                            </div>
-                            <div onClick={() => handleShowEdit(item)}>
-                                <img className='image' src={editImage} alt="icon to edit post"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='post-container'>
-                        <div className="info-section">
-                            <h4 className='name'>@{item.name}</h4>
-                            { showDate(item.date)}
-                        </div>
-                        <div className='content'>
-                            <p>{item.content}</p>
-                        </div>
-                    </div>
-                </section>
-               
-        ))) 
-}
-
 
     return (
         <main className="main-home">
@@ -107,10 +75,15 @@ function Home () {
             content={content} 
             disabled={disabled} 
             handleTitle={handleTitle} 
-            handleContent={handleContent}/>
-            {renderPosts()}
+            handleContent={handleContent}
+            h3="What's on your mind?"
+            value="CREATE"/>
+            <RenderPosts storePost={storePost} 
+            handleShowDelete={handleShowDelete} 
+            handleShowEdit={handleShowEdit}
+            name={name}/>
             <DeleteConfirmation handleClose={handleClose} show={showRemove} item={remove} />
-            <EditConfirmation handleClose={handleClose} show={show} item={edit} />
+            <EditConfirmation handleClose={handleClose} show={showEdit} item={edit} />
 
         </main>
     )

@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 
-function forms ({handleSubmit, title, content, disabled, handleTitle, handleContent}) {
+function Forms ({handleSubmit, title, content, disabled, handleTitle, handleContent, h3, value}) {
     return (
         <form onSubmit={handleSubmit}>
-                <h3>Whats on your mind?</h3>
+                <h3 className="form-title">{h3}</h3>
                 <div className="input-title">
                     <label htlmfor="title">
                         <span>Title</span>
@@ -18,7 +19,7 @@ function forms ({handleSubmit, title, content, disabled, handleTitle, handleCont
                 </div>
                 <div className="button-create-container">
                 <input type="submit"
-                value="CREATE"
+                value={value}
                 data-testid="button-create" 
                 disabled={disabled}
                 className={disabled? "button-create-grey" : "button-create" }/>
@@ -27,4 +28,4 @@ function forms ({handleSubmit, title, content, disabled, handleTitle, handleCont
     )
 }
 
-export default forms;
+export default Forms;

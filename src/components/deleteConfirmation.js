@@ -16,7 +16,7 @@ export default function DeleteConfirmation({handleClose, show, item}) {
     return (
     <>
       <Modal show={show} onHide={handleClose} centered>
-        <Modal.Header closeButton>
+        <Modal.Header>
           <Modal.Title>Are you sure you want to delete this item?</Modal.Title>
         </Modal.Header>
         <Modal.Footer>

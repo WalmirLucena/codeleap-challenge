@@ -31,7 +31,7 @@ html{
     font-size: xx-large;
 }
 
-.main-home form h3 {
+.form-title {
     margin-left: 1.5rem;
     padding: 1rem 0;
     font-weight:500
@@ -146,6 +146,11 @@ html{
 }
 
 .post-buttons {
+    display: flex;
+}
+
+.post-buttons-block {
+    visibility: hidden;
     display: flex;
 }
 
