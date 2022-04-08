@@ -10,9 +10,12 @@ Caso o Post seja de sua autoria os ícones de Edição e Remoção serão mostra
 
 ## Tecnologias Utilizadas
 
- - React <img alt="Walmir-react" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" />
+ <img  height="40" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" alt="REACT" />
 
-- Cypress <img alt="Walmir-cypress" height="30" width="40" src="https://miro.medium.com/max/1200/1*HuEr6-Y7nXOTGJoyZf0Yew.png" />
+
+ <img  height="40" width="60" src="https://blog-geek-midia.s3.amazonaws.com/wp-content/uploads/2021/01/06115555/redux-logo.png" alt="REDUX" />
+
+<img  height="40" width="60" src="https://miro.medium.com/max/1200/1*HuEr6-Y7nXOTGJoyZf0Yew.png" alt="CYPRESS/>
 
 ## Instalando dependências
 
