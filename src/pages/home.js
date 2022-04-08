@@ -40,7 +40,7 @@ function Home () {
     
     const handleSubmit = (event) => {
         event.preventDefault();
-        const post = {name, title, content, date: (new Date())}
+        const post = {name: name.toString(), title, content, date: (new Date().toLocaleString())}
         dispatch(newPost(post));
     }
 

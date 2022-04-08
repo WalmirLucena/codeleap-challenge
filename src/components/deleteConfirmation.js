@@ -20,10 +20,10 @@ export default function DeleteConfirmation({handleClose, show, item}) {
           <Modal.Title>Are you sure you want to delete this item?</Modal.Title>
         </Modal.Header>
         <Modal.Footer>
-          <button className="modal-buttons" variant="secondary" onClick={handleClose}>
+          <button className="modal-buttons" onClick={handleClose}>
             Cancel
           </button>
-          <button className="modal-buttons" variant="primary" onClick={handleClick}>
+          <button className="modal-buttons" onClick={handleClick}>
             OK
           </button>
         </Modal.Footer>

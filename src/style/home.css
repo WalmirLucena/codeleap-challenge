@@ -170,13 +170,13 @@ html{
     font-size: large;
 }
 
-.post-section .content{
+.post-section .item-content{
     margin: 1rem;
     width: 90%;
     margin-bottom: 2rem;
 
 }
-.content p {
+.item-content p {
     width: 100%;
     box-sizing: border-box;
     white-space: pre-line;
@@ -201,7 +201,6 @@ html{
     margin-top: 1rem;
     padding: 0.25rem;
     width: 100px;
-    margin-left: 36rem;
     font-weight: bold;
     margin-bottom: 2rem;
 }

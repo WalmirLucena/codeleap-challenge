@@ -26,7 +26,7 @@ export default function LoginForm () {
     event.preventDefault();
   
     dispatch(getUser(username))      
-    navigate("/home", {state: username});
+    navigate("/home");
     }
 
     return (
@@ -34,13 +34,12 @@ export default function LoginForm () {
                 <div className="input-text">
                     <label htlmfor="name">
                         <span>Please enter your username</span>
-                        <input type="text" name="name" value={username} placeholder="John Doe" onChange={handleInput} />
+                        <input type="text" name="name" className="input-name" value={username} placeholder="John Doe" onChange={handleInput} />
                     </label>
                 </div>
                 
                 <input type="submit"
                 value="ENTER"
-                data-testid="button-submit" 
                 disabled={disabled}
                 className={disabled? "submit-button-grey":"submit-button" }/>
             </form>

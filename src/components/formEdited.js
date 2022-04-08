@@ -8,19 +8,18 @@ function Forms ({handleSubmit, title, content, disabled, handleTitle, handleCont
                 <div className="input-title">
                     <label htlmfor="title">
                         <span>Title</span>
-                        <input type="text" data-testid="title" name="title" value={title} placeholder="Hello World" onChange={handleTitle} />
+                        <input type="text" className="title" name="title" value={title} placeholder="Hello World" onChange={handleTitle} />
                     </label>
                 </div>
                 <div className="input-content">
                     <label htlmfor="content">
                         <span>Content</span>
-                        <textarea data-testid="content" name="content" value={content} placeholder="Content Here" onChange={handleContent} />
+                        <textarea className="content" name="content" value={content} placeholder="Content Here" onChange={handleContent} />
                     </label>
                 </div>
                 <div className="button-create-container">
                 <input type="submit"
                 value={value}
-                data-testid="button-create" 
                 disabled={disabled}
                 className={disabled? "button-create-grey" : "button-create" }/>
                 </div>
