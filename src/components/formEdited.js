@@ -3,7 +3,7 @@ import React from "react";
 
 function Forms ({handleSubmit, title, content, disabled, handleTitle, handleContent, h3, value}) {
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="form-container" onSubmit={handleSubmit}>
                 <h3 className="form-title">{h3}</h3>
                 <div className="input-title">
                     <label htlmfor="title">

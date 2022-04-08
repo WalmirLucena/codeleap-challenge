@@ -205,10 +205,6 @@ html{
     margin-bottom: 2rem;
 }
 
-.modal-container {
-    width: 60%;
-}
-
 .save-container {
     display: flex;
     flex-flow: column;

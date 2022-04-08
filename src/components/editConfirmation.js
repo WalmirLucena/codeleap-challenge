@@ -41,7 +41,7 @@ export default function EditConfirmation({handleClose, show, item}) {
 
     return (
     <>
-      <Modal className="modal-container" size="lg" show={show} onHide={handleClose} centered>
+      <Modal size="lg" show={show} onHide={handleClose} centered>
             <Forms 
             handleSubmit={handleSubmit} 
             title={title} 
