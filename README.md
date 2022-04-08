@@ -13,9 +13,9 @@ Caso o Post seja de sua autoria os ícones de Edição e Remoção serão mostra
  <img  height="40" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" alt="REACT" />
 
 
- <img  height="40" width="60" src="https://blog-geek-midia.s3.amazonaws.com/wp-content/uploads/2021/01/06115555/redux-logo.png" alt="REDUX" />
+ <img  height="40" width="80" src="https://blog-geek-midia.s3.amazonaws.com/wp-content/uploads/2021/01/06115555/redux-logo.png" alt="REDUX" />
 
-<img  height="40" width="60" src="https://miro.medium.com/max/1200/1*HuEr6-Y7nXOTGJoyZf0Yew.png" alt="CYPRESS/>
+<img  height="40" width="80" src="https://miro.medium.com/max/1200/1*HuEr6-Y7nXOTGJoyZf0Yew.png" alt="CYPRESS"/>
 
 ## Instalando dependências
 
